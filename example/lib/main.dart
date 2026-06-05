@@ -11,8 +11,8 @@ class ZelloDemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         title: 'Zello demo',
-        theme: ThemeData(useMaterial3: true,
-          colorSchemeSeed: Colors.deepOrange),
+        theme:
+            ThemeData(useMaterial3: true, colorSchemeSeed: Colors.deepOrange),
         home: const HomePage(),
       );
 }
@@ -73,7 +73,8 @@ class _HomePageState extends State<HomePage> {
   void _push(String line) {
     if (!mounted) return;
     setState(() {
-      _log.insert(0, '${DateTime.now().toIso8601String().substring(11, 19)}  $line');
+      _log.insert(
+          0, '${DateTime.now().toIso8601String().substring(11, 19)}  $line');
       if (_log.length > 200) _log.removeLast();
     });
   }
@@ -145,13 +146,15 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Expanded(
                   child: FilledButton(
-                    onPressed: _connect, child: const Text('Connect'),
+                    onPressed: _connect,
+                    child: const Text('Connect'),
                   ),
                 ),
                 const SizedBox(width: 8),
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: _disconnect, child: const Text('Disconnect'),
+                    onPressed: _disconnect,
+                    child: const Text('Disconnect'),
                   ),
                 ),
               ],
@@ -162,16 +165,15 @@ class _HomePageState extends State<HomePage> {
             const Divider(),
             const Align(
               alignment: Alignment.centerLeft,
-              child: Text('Events',
-                  style: TextStyle(fontWeight: FontWeight.bold)),
+              child:
+                  Text('Events', style: TextStyle(fontWeight: FontWeight.bold)),
             ),
             Expanded(
               child: ListView.builder(
                 itemCount: _log.length,
                 itemBuilder: (_, i) => Text(
                   _log[i],
-                  style: const TextStyle(
-                      fontFamily: 'monospace', fontSize: 12),
+                  style: const TextStyle(fontFamily: 'monospace', fontSize: 12),
                 ),
               ),
             ),
@@ -229,9 +231,7 @@ class _PttButtonState extends State<_PttButton> {
           _down ? 'TALKING' : 'PUSH TO TALK',
           textAlign: TextAlign.center,
           style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 16),
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
         ),
       ),
     );

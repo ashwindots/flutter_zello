@@ -21,9 +21,8 @@ class ZelloMessage {
       channel: map['channel'] as String? ?? '',
       from: map['from'] as String? ?? '',
       text: map['text'] as String? ?? '',
-      receivedAt: ts != null
-          ? DateTime.fromMillisecondsSinceEpoch(ts)
-          : DateTime.now(),
+      receivedAt:
+          ts != null ? DateTime.fromMillisecondsSinceEpoch(ts) : DateTime.now(),
     );
   }
 }
